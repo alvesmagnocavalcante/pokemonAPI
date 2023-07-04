@@ -63,39 +63,9 @@ namespace Pokemon.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pokebola {
-            get {
-                object obj = ResourceManager.GetObject("pokebola", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pokebola__1_ {
             get {
                 object obj = ResourceManager.GetObject("pokebola (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pokebolas {
-            get {
-                object obj = ResourceManager.GetObject("pokebolas", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pokebolas__1_ {
-            get {
-                object obj = ResourceManager.GetObject("pokebolas (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

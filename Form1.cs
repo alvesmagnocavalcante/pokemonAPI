@@ -17,6 +17,13 @@ namespace Pokemon
             try
             {
                 string nome = textBox1.Text.ToLower();
+
+                if (string.IsNullOrWhiteSpace(nome))
+                {
+                    MessageBox.Show("Digite o nome de um Pokémon.");
+                    return;
+                }
+
                 string apiUrl = $"https://pokeapi.co/api/v2/pokemon/{nome}";
 
                 using (HttpClient client = new HttpClient())
@@ -36,7 +43,8 @@ namespace Pokemon
                         {
                             string speciesResponseBody = await speciesResponse.Content.ReadAsStringAsync();
                             PokemonSpecies pokemonSpecies = JsonConvert.DeserializeObject<PokemonSpecies>(speciesResponseBody);
-                            listBox1.Items.Add($"Habitat : {pokemonSpecies.Habitat?.Name.ToUpper() ?? "Desconhecido"}");
+                            string habitat = pokemonSpecies.Habitat?.Name;
+                            listBox1.Items.Add($"Habitat : {(!string.IsNullOrEmpty(habitat) ? habitat.ToUpper() : "Desconhecido")}");
                         }
                         else
                         {
@@ -53,13 +61,8 @@ namespace Pokemon
             }
             catch (Exception)
             {
-                MessageBox.Show("Pokemon não encontrado. Digite manualmente.");
+                MessageBox.Show("Ocorreu um erro ao pesquisar o Pokémon.");
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 
